@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+
+ :root {
+    --Bright-Blue: hsl(220, 98%, 61%);
+    --Check-Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+    /* light theme */
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+    --Light-Grayish-Blue: hsl(233, 11%, 84%);
+    --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+    --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+    /* Dark Theme */
+    --Very-Dark-Blue: hsl(235, 21%, 11%);
+    --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+    --Light-Grayish-Blue: hsl(234, 39%, 85%);
+    --Light-Grayish-Blue: hsl(236, 33%, 92%); /*hover*/
+    --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+    --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+    --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+    /* font */
+    --font-fam-400: 'Josefin Sans', sans-serif;
+    --font-fam-700: 'Josefin Sans', sans-serif;
+    --Font-size: 18px;
+    --Weight-normal: 400;
+    --weight-bold: 700;
+}  
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+body {
+    font-family: var(--font-fam-400);
+}
+
+main {
+    width: 100%;
+}
+
+header {
+    height: 280px;
+    background-image: url(images/bg-desktop-dark.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section {
+    background-color: var(--Very-Dark-Blue);
+}
+
+.todo-box {
+    /* border-radius: 2px; */
+    background-color: transparent;
+}
+
+.todo-box div:nth-child(1) {
+    border-radius: 2px 2px 0 0;
+}
+
+.to-do {
+    width: clamp(350px, 60%, 800px);
+    margin-inline: auto;
+    position: relative;
+    top: -200px;
+}
+
+.todo-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1.3rem;
+}
+
+.todo-icon h2 {
+    color: var(--Very-Light-Gray);
+    font-size: 40px;
+}
+
+.moon {
+    cursor: pointer;
+}
+
+.todo-check {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: var(--Dark-Grayish-Blue) 1px solid;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(14, 2, 55, 0.3) 0px 8px 16px -8px;
+    transition: all .4s;
+}
+
+.todo-check:hover {
+   transform: scaleX(1.05);
+   margin-block: .5rem;
+   border-bottom: none;
+   border-radius: 2px;
+}
+
+.check-contain {
+    display: flex;
+    align-items: center;
+}
+
+.contain-para {
+    color: var(--Very-Light-Gray);
+}
+
+/* jquery toggleclasses */
+.contain-paragraph {
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+.tog-todo {
+    background-color: var(--Very-Light-Gray);
+}
+/* jquery toggle classes */
+
+.todo-check img {
+    cursor: pointer;
+}
+
+.todo-search {
+    width: 100%;
+    padding: .8rem;
+    font-family: var(--font-fam-400);
+    background-color: var(--Very-Dark-Grayish-Blue);
+    border: none;
+    border-radius: 2px;
+    color: var(--Very-Light-Gray);
+    margin-bottom: 1.5rem;
+}
+
+.todo-checkbox {
+    display: none;
+}
+
+.todo-label {
+    position: relative;
+    margin-right: 2rem;
+
+}
+
+.todo-label:before {
+    position: absolute;
+   content: "";
+   height: 15px;
+   width: 15px;
+   border: 1px solid white;
+   border-radius: 50%;
+}
+
+.todo-label:after {
+    position: absolute;
+    content: "";
+    height: 1.4rem;
+   width: 1.4rem;
+   border-radius: 50%;
+   background-image: url(images/icons8-check-circle.svg);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   left: -.20rem;
+   top: -.25rem;
+   transform: scale(0) rotateZ(180deg);
+   transition: all 0.4s;
+   z-index: 1;
+}
+
+.todo-checkbox:checked + .todo-label::after {
+    transform: scale(1) rotateZ(0deg);
+}
+
+.pick {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    color: var(--Light-Grayish-Blue);
+    background-color: var(--Very-Dark-Grayish-Blue);
+    border-radius: 0 0 2px 2px;
+}
+
+.pick-list > li {
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.pick-list a {
+    color: var(--Light-Grayish-Blue);
+    text-decoration: none;
+}
+
+.pick-list a:hover,
+.pick-list a:active {
+    color: var(--Bright-Blue);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
