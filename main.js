@@ -76,6 +76,7 @@ function addTodo() {
 
         const checkboxes = document.querySelectorAll('.todo-checkbox');
         const savedCheckboxState = JSON.parse(localStorage.getItem('checkboxState')) || {};
+        console.log(savedCheckboxState);
 
         checkboxes.forEach((checkbox, index) => {
             checkbox.addEventListener('change', () => {
@@ -177,19 +178,22 @@ if (checkMode === 'enable') {
 
 window.onload = () => {
     const savedTodos = JSON.parse(localStorage.getItem('key')) || [];
-    console.log(savedTodos);
     savedTodos.forEach((todoTx, index) => {
         const onloadTxt = todoTx.charAt(0).toUpperCase() + todoTx.slice(1)
         todoDrop(onloadTxt, index)
         
 
         const cancelIcon = document.querySelector('.cancel-todo')
-        // todoP.innerHTML = onloadTxt;
         cancelIcon.addEventListener('click', () => {
             const todoDivs = document.querySelector('.todo-check')
             todoDivs.remove()
             savedTodos.splice(index, 1);
             localStorage.setItem('key', JSON.stringify(savedTodos));
+            if (savedTodos.length === 0) {
+                options.style.opacity = '0';
+            } else {
+                options.style.opacity = '1';
+            }
         });
         
 
@@ -207,12 +211,11 @@ window.onload = () => {
         }
     })
 
-    if (savedTodos.length >= 1) {
-        options.style.opacity = '1'
-        // console.log(savedTodosconst    .length);
+    console.log(savedTodos.length, savedTodos);
+    if (savedTodos.length === 0) {
+        options.style.opacity = '0';
     } else {
-        options.style.opacity = '0'
-        // console.log(savedTodos);
+        options.style.opacity = '1';
     }
     
     // ----------------------------------------
